@@ -1,7 +1,7 @@
 image: Visual Studio 2017
 platform: Any CPU
 
-version: version: 1.0.{build}
+version: 1.0.{build}
 
 configuration:
 - Release
