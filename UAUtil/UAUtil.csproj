@@ -7,6 +7,10 @@
     <Product>User-Agent Utility</Product>
     <Description>Utility for get details from User-Agent header</Description>
     <PackageProjectUrl />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>2017</Copyright>
+    <PackageTags>User Agent Utility Parser</PackageTags>
+    <RepositoryUrl>https://github.com/thiagobarradas/uautil</RepositoryUrl>
   </PropertyGroup>
 
 </Project>

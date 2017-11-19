@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
 		codecov.yml = codecov.yml
+		pack_client.ps1 = pack_client.ps1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAUtil.Test", "UAUtil.Test\UAUtil.Test.csproj", "{21FDF60B-698F-4B19-87C4-1D78DF89B139}"
