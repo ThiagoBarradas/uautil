@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Thiago Barradas</Authors>
+    <Company>Elephee</Company>
+    <Product>User-Agent Utility</Product>
+    <Description>Utility for get details from User-Agent header</Description>
+    <PackageProjectUrl />
   </PropertyGroup>
 
 </Project>
