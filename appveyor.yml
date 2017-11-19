@@ -15,5 +15,5 @@ build:
   project: UAUtil.sln
 
 test_script:
-  - OpenCover.Console.exe -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test --logger:trx;LogFileName=results.trx /p:DebugType=full UAUtil.Test\UAUtil.Test.csproj" -filter:"+[UAUtil*]* -[UAUtil.Test*]*" -output:".\coverage.xml"
+  - OpenCover.Console.exe -oldstyle -register:user -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test --logger:trx;LogFileName=results.trx /p:DebugType=full UAUtil.Test\UAUtil.Test.csproj" -filter:"+[UAUtil*]* -[UAUtil.Test*]*" -output:".\coverage.xml"
   - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
