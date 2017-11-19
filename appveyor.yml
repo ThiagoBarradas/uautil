@@ -1,16 +1,15 @@
-init:
-  - git config --global core.autocrlf true
- 
 image: Visual Studio 2017
 platform: Any CPU
+
+version: version: 1.0.{build}
 
 configuration:
 - Release
 
 before_build:
-- dotnet restore
 - choco install opencover.portable
 - choco install codecov
+- dotnet restore
 
 build:
   project: UAUtil.sln
