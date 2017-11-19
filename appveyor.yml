@@ -28,7 +28,7 @@ test_script:
   - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
 
 after_test:
-  - dotnet pack --configuration Release /p:PackageVersion=
+  - dotnet pack --configuration Release /p:PackageVersion={version}
 
 artifacts:
   - path: UAUtil\bin\Release\netstandard2.0\UAUtil.dll
