@@ -7,6 +7,8 @@ configuration:
 
 before_build:
 - dotnet restore
+- choco install opencover.portable
+- choco install codecov
 
 build:
   project: UAUtil.sln
