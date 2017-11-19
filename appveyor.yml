@@ -1,8 +1,19 @@
 image: Visual Studio 2017
 platform: Any CPU
 
+version: '1.0.{build}'
+
 configuration:
 - Release
+
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 
 before_build:
 - choco install opencover.portable
@@ -17,7 +28,7 @@ test_script:
   - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
 
 after_test:
-  - dotnet pack --configuration Release
+  - dotnet pack --configuration Release /p:PackageVersion=
 
 artifacts:
   - path: UAUtil\bin\Release\netstandard2.0\UAUtil.dll
