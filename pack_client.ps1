@@ -11,4 +11,4 @@ $content = $content -replace '\$version\$',$versionStr
 
 $content | Out-File $root\UAUtil.compiled.nuspec
 
-& dotnet pack $root\UAUtil.compiled.nuspec -configuration Release
+& dotnet pack $root\UAUtil.compiled.nuspec --configuration Release
