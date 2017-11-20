@@ -1,7 +1,8 @@
 image: Visual Studio 2017
 platform: Any CPU
 
-version: '1.0.{build}'
+environment:
+  version: $(APPVEYOR_BUILD_VERSION)
 
 configuration:
 - Release
@@ -9,14 +10,13 @@ configuration:
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
-  version: '$(APPVEYOR_BUILD_VERSION)'
-  package_version: '$(APPVEYOR_BUILD_VERSION)'
-  assembly_version: '$(APPVEYOR_BUILD_VERSION)'
-  file_version: '$(APPVEYOR_BUILD_VERSION)'
-  informational_version: '$(APPVEYOR_BUILD_VERSION)'
+  version: %version%
+  package_version: %version%
+  assembly_version: %version%
+  file_version: %version%
+  informational_version: %version%
 
 before_build:
-- echo $(APPVEYOR_BUILD_VERSION)
 - choco install opencover.portable
 - choco install codecov
 - dotnet restore
@@ -29,15 +29,15 @@ test_script:
   - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
 
 after_test:
-  - dotnet pack --configuration Release /p:Version=$(APPVEYOR_BUILD_VERSION)
+  - dotnet pack --configuration Release /p:Version=%version%
 
 artifacts:
   - path: UAUtil\bin\Release\netstandard2.0\UAUtil.dll
     name: UAUtil.dll
-  - path: UAUtil\bin\Release\UAUtil.$(APPVEYOR_BUILD_VERSION).nupkg
-    name: UAUtil.$(APPVEYOR_BUILD_VERSION).nupkg
+  - path: UAUtil\bin\Release\UAUtil.%version%.nupkg
+    name: UAUtil.%version%.nupkg
 
 deploy:
   provider: NuGet
   api_key:
-    secure: F08+ODn3ExAxMZuWu9p7b1pGQYfycvQi8RqYUgU6zWy841j3DQDgosDfaE4iyyvO
+    secure: F08+ODn3ExAxMZsuWu9p7b1pGQYfycvQi8RqYUgU6zWy841j3DQDgosDfaE4iyyvO
