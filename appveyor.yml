@@ -28,12 +28,13 @@ test_script:
   - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
 
 after_test:
-  - dotnet pack --configuration Release /p:PackageVersion={version}
+  - dotnet pack --configuration Release
 
 artifacts:
   - path: UAUtil\bin\Release\netstandard2.0\UAUtil.dll
     name: UAUtil.dll
-  - path: UAUtil.*.nupkg
+  - path: UAUtil\bin\Release\UAUtil.{version}.nupkg
+    name: UAUtil.{version}.nupkg
 
 deploy:
   provider: NuGet
