@@ -4,7 +4,7 @@ platform: Any CPU
 version: '1.0.{build}'
 
 environment:
-  version: '1.0.{build}'
+  version: '1.0.$(APPVEYOR_BUILD_VERSION)'
 
 configuration:
 - Release
@@ -19,7 +19,7 @@ dotnet_csproj:
   informational_version: '{version}'
 
 before_build:
-- echo $(version)
+- echo %version%
 - choco install opencover.portable
 - choco install codecov
 - dotnet restore
