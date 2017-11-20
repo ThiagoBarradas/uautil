@@ -3,23 +3,20 @@ platform: Any CPU
 
 version: '1.0.{build}'
 
-environment:
-  version: '1.0.$(APPVEYOR_BUILD_VERSION)'
-
 configuration:
 - Release
 
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
+  version: '$(APPVEYOR_BUILD_VERSION)'
+  package_version: '$(APPVEYOR_BUILD_VERSION)'
+  assembly_version: '$(APPVEYOR_BUILD_VERSION)'
+  file_version: '$(APPVEYOR_BUILD_VERSION)'
+  informational_version: '$(APPVEYOR_BUILD_VERSION)'
 
 before_build:
-- echo %version%
+- echo $(APPVEYOR_BUILD_VERSION)
 - choco install opencover.portable
 - choco install codecov
 - dotnet restore
