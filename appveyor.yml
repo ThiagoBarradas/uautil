@@ -19,7 +19,7 @@ dotnet_csproj:
   informational_version: '{version}'
 
 before_build:
-- echo $env:version
+- echo $(version)
 - choco install opencover.portable
 - choco install codecov
 - dotnet restore
