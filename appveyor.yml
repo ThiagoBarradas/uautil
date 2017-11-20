@@ -29,13 +29,13 @@ test_script:
   - codecov -f .\coverage.xml -t %CODECOV_TOKEN%
 
 after_test:
-  - dotnet pack --configuration Release
+  - dotnet pack --configuration Release /p:Version=$(APPVEYOR_BUILD_VERSION)
 
 artifacts:
   - path: UAUtil\bin\Release\netstandard2.0\UAUtil.dll
     name: UAUtil.dll
-  - path: UAUtil\bin\Release\UAUtil.{version}.nupkg
-    name: UAUtil.{version}.nupkg
+  - path: UAUtil\bin\Release\UAUtil.$(APPVEYOR_BUILD_VERSION).nupkg
+    name: UAUtil.$(APPVEYOR_BUILD_VERSION).nupkg
 
 deploy:
   provider: NuGet
