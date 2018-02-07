@@ -3,7 +3,7 @@
 [![NuGet Downloads](https://img.shields.io/nuget/dt/UAUtil.svg)](https://www.nuget.org/packages/UAUtil/)
 [![NuGet Version](https://img.shields.io/nuget/v/UAUtil.svg)](https://www.nuget.org/packages/UAUtil/)
 
-# UAUtil
+## UAUtil
 
 User-Agent utility - Extract details from user-agent header
 
@@ -29,16 +29,16 @@ UserAgentDetails userAgentDetails = UAUtil.GetUserAgentDetails(userAgent);
 // userAgentDetails.OperatingSystemVersion : 10
 ```
 
-# How can I contribute?
+## How can I contribute?
 Please, refer to [CONTRIBUTING](CONTRIBUTING.md)
 
-# Found something strange or need a new feature?
+## Found something strange or need a new feature?
 Open a new Issue following our issue template [ISSUE-TEMPLATE](ISSUE-TEMPLATE.md)
 
-# Changelog
+## Changelog
 See in [nuget version history](https://www.nuget.org/packages/UAUtil)
 
-### Did you like it? Please, make a donate :)
+## Did you like it? Please, make a donate :)
 
 if you liked this project, please make a contribution and help to keep this and other initiatives, send me some Satochis.
 
