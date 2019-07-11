@@ -5,7 +5,7 @@ namespace UAUtil
     /// <summary>
     /// Utility for get User-Agent header details
     /// </summary>
-    public class UserAgentUtility : IUserAgentUtility
+    public class UserAgentUtility : IUserAgentUtility 
     {
         /// <summary>
         /// Get details from User Agent like platform, browser and operating system
