@@ -7,7 +7,7 @@ namespace UAUtil.Tests
     /// </summary>
     public class PlatformTest
     {
-        public IUserAgentUtility UserAgentUtility { get; set; }
+        public IUserAgentUtility UserAgentUtility { get; set; } 
 
         public PlatformTest()
         {
